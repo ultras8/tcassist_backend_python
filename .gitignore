@@ -17,3 +17,5 @@ Thumbs.db
 # ข้ามโฟลเดอร์เก็บไฟล์คะแนนทั้งหมด
 data_criteria/
 data_stats/
+tcas_library/
+.tester/

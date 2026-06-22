@@ -13,10 +13,10 @@ def get_engine():
         host = os.getenv("DB_HOST")
         port = os.getenv("DB_PORT")
         db_name = os.getenv("DB_NAME")
-        
+
         # สร้าง Connection String สำหรับ PostgreSQL
         conn_str = f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{db_name}"
-        
+
         engine = create_engine(conn_str)
         print("SQLAlchemy Engine Ready!")
         return engine
