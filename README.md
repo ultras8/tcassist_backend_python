@@ -46,22 +46,22 @@ uvicorn scripts.stats_analysis.analyze_risk_no_avg:app --reload --port 8000
 
 ### จัดการส่วนข้อสอบ
 
-**cloud_upload.py** : scraping ข้อสอบจากหน้าเว็บทปอ ยิง ไฟล์ข้อสอบขึ้น Supabase + เซฟข้อมูลลง local dbs
-**scraping_answer.py** : ดึงข้อมูลจากหน้าเว็บ ทปอ มาเป็น pdf ในเครื่อง
-**scraping_pdf.py** : ตัด pdf แยกมาเป็นไฟล์รูปเก็บใน folder (กรณีมีไฟล์ pdf โหลดเข้ามาของ ทปอ)
-**converter.py** : ตัด pdf แยกมาเป็นไฟล์รูปเก็บใน folder (ต่อกับหลังบ้านกรณีผู้ใช้ import file)
-**auto_coords.py** : ใช้ Pixel-level Analysis ตัดภาพโจทย์ auto ใช้ OpenCV จัดการภาพ + ใช้ NumPy จัดการระบุพิกัด (ใช้ได้แค่รูปแบบข้อสอบของ ทปอ)
-**extract_answer_table.py** : ดึงคำตอบเฉลยด้วย Pixel-level Analysis
+- **cloud_upload.py** : scraping ข้อสอบจากหน้าเว็บทปอ ยิง ไฟล์ข้อสอบขึ้น Supabase + เซฟข้อมูลลง local dbs
+- **scraping_answer.py** : ดึงข้อมูลจากหน้าเว็บ ทปอ มาเป็น pdf ในเครื่อง
+- **scraping_pdf.py** : ตัด pdf แยกมาเป็นไฟล์รูปเก็บใน folder (กรณีมีไฟล์ pdf โหลดเข้ามาของ ทปอ)
+- **converter.py** : ตัด pdf แยกมาเป็นไฟล์รูปเก็บใน folder (ต่อกับหลังบ้านกรณีผู้ใช้ import file)
+- **auto_coords.py** : ใช้ Pixel-level Analysis ตัดภาพโจทย์ auto ใช้ OpenCV จัดการภาพ + ใช้ NumPy จัดการระบุพิกัด (ใช้ได้แค่รูปแบบข้อสอบของ ทปอ)
+- **extract_answer_table.py** : ดึงคำตอบเฉลยด้วย Pixel-level Analysis
 
 ### จัดการส่วนเกณฑ์คะแนนและสถิติ
 
-**uni_scraper.py** : scraping หน้าเว็บทปอ ดึงรหัสสาขาจากทุกคณะของ 20 มหาวิทยาลัยลงไฟล์ mega_unis_links.txt
-**save.py** : ดึงข้อมูลเกณฑ์และคะแนนย้อนหลังของรอบที่ 3 (Admission) จากหน้าเว็บ ทปอ อ้างอิงจากรหัสใน mega_unis_links.txt สร้างเป็นไฟล์ ตามรหัสสาขา ตัวอย่าง unlocked_score_10240125110101A.txt
-**process_criteria.py** : จัดคิว อ่านไฟล์ แล้วยิงต่อหา main_sync
-**main_sync.py** : Gemini AI clean data ส่งหา sync_manager.py
-**sync_manager.py** : รับข้อมูลที่สะอาดแล้ว ยิงขึ้น database
+- **uni_scraper.py** : scraping หน้าเว็บทปอ ดึงรหัสสาขาจากทุกคณะของ 20 มหาวิทยาลัยลงไฟล์ mega_unis_links.txt
+- **save.py** : ดึงข้อมูลเกณฑ์และคะแนนย้อนหลังของรอบที่ 3 (Admission) จากหน้าเว็บ ทปอ อ้างอิงจากรหัสใน mega_unis_links.txt สร้างเป็นไฟล์ ตามรหัสสาขา ตัวอย่าง unlocked_score_10240125110101A.txt
+- **process_criteria.py** : จัดคิว อ่านไฟล์ แล้วยิงต่อหา main_sync
+- **main_sync.py** : Gemini AI clean data ส่งหา sync_manager.py
+- **sync_manager.py** : รับข้อมูลที่สะอาดแล้ว ยิงขึ้น database
 
-**process_stats.py** : อ่าน xlsx สถิติเก่า clean แล้วยิงขึ้น database
-**analyze_risk_no_avg.py** : คำนวณโอกาสติดด้วย Z-score
+- **process_stats.py** : อ่าน xlsx สถิติเก่า clean แล้วยิงขึ้น database
+- **analyze_risk_no_avg.py** : คำนวณโอกาสติดด้วย Z-score
 
 ---
